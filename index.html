@@ -67,11 +67,11 @@ section{padding:6rem 2rem}
 /* ══════════════════════════════════
    HERO
 ══════════════════════════════════ */
-.hero{padding-top:62px;min-height:100vh;background:var(--sf);display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--bdr);transition:background .3s}
-.hleft{padding:4.5rem 3rem 4.5rem 2rem;display:flex;flex-direction:column;gap:0}
-.hright{position:relative;height:100%;min-height:580px;overflow:hidden}
-.hright::before{content:'';position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(90deg,var(--sf),transparent);z-index:2;pointer-events:none}
-.himg{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;position:absolute;inset:0}
+.hero{padding-top:62px;min-height:calc(100vh - 62px);background:var(--sf);display:grid;grid-template-columns:1.15fr 0.85fr;align-items:stretch;border-bottom:1px solid var(--bdr);transition:background .3s}
+.hleft{padding:4rem 2.5rem 4rem 2rem;display:flex;flex-direction:column;gap:0;justify-content:center}
+.hright{position:relative;height:100%;min-height:520px;max-height:700px;overflow:hidden}
+.hright::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--sf) 0%,transparent 30%),linear-gradient(180deg,transparent 60%,var(--sf) 100%);z-index:2;pointer-events:none}
+.himg{width:100%;height:100%;object-fit:cover;object-position:60% 15%;display:block;position:absolute;inset:0;filter:brightness(.96)}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 8px;border-radius:999px;border:1px solid var(--am);background:var(--ad);font-size:11px;font-weight:700;color:var(--a);letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.6rem;width:fit-content}
 .pdot{width:6px;height:6px;border-radius:50%;background:var(--a);animation:blink 2.2s ease infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
@@ -406,8 +406,7 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
 <!-- ═══ NAV ═══ -->
 <nav>
   <a class="nbrand" onclick="showPage('main')">
-    <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#f0900a" fill-opacity=".12"/><path d="M9 22L18 9L27 22" stroke="#f0900a" stroke-width="2.2" stroke-linejoin="round"/><path d="M12.5 22h11" stroke="#f0900a" stroke-width="2.2"/><circle cx="18" cy="26" r="2.2" fill="#f0900a"/></svg>
-    <span class="nbrand-n">Retail<em>Mind</em></span>
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=180,fit=crop,q=95/ALpnEPbBrai9Xq68/logo_retailmind-mp8WpBQe2ru8PEol.png" alt="RetailMind" style="height:32px;width:auto;object-fit:contain" loading="eager">
   </a>
   <ul class="nlinks">
     <li><a onclick="showPage('main')" data-de="Startseite" data-en="Home">Startseite</a></li>
@@ -468,7 +467,7 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
     <div class="titem"><span class="tck">✓</span><span data-de="Made in Germany" data-en="Made in Germany">Made in Germany</span></div>
     <div class="titem"><span class="tck">✓</span><span data-de="Keine Zusatzhardware" data-en="No extra hardware">Keine Zusatzhardware</span></div>
     <div class="titem"><span class="tck">✓</span><span data-de="Start in 24 Stunden" data-en="Live in 24 hours">Start in 24 Stunden</span></div>
-    <div class="titem"><span class="tck">✓</span><span data-de="3-Wochen-Pilotphase" data-en="3-week pilot phase">3-Wochen-Pilotphase</span></div>
+    <div class="titem"><span class="tck">✓</span><span data-de="Demo in 30 Minuten" data-en="Demo in 30 minutes">Demo in 30 Minuten</span></div>
   </div>
 </div>
 
@@ -525,8 +524,8 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
       </div>
       <div class="w-cta wc">
         <h3 data-de="Überzeugt?" data-en="Convinced?">Überzeugt?</h3>
-        <p data-de="3-Wochen-Pilotphase in Ihrem Store — unverbindlich und kostenlos." data-en="3-week pilot phase in your store — non-binding and free of charge.">3-Wochen-Pilotphase in Ihrem Store — unverbindlich und kostenlos.</p>
-        <a class="btn-a" onclick="gs('contact')" data-de="Pilotphase anfragen →" data-en="Request pilot phase →">Pilotphase anfragen →</a>
+        <p data-de="In 30 Minuten live — wir zeigen Ihnen RetailMind in Ihrem Store-Szenario." data-en="Live in 30 minutes — we show you RetailMind in your store scenario.">In 30 Minuten live — wir zeigen Ihnen RetailMind in Ihrem Store-Szenario.</p>
+        <a class="btn-a" onclick="gs('contact')" data-de="Demo anfragen →" data-en="Request Demo →">Demo anfragen →</a>
       </div>
     </div>
   </div>
@@ -889,7 +888,7 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
         <h2 class="sec-h2"><span data-de="Klar kalkulierbar." data-en="Clearly calculable.">Klar kalkulierbar.</span> <em data-de="Pro Standort." data-en="Per location.">Pro Standort.</em></h2>
         <p class="sec-p" style="max-width:420px" data-de="Alle Pakete inklusive KI-Anfragen-Kontingent — kein versteckter Verbrauch, keine Überraschungen auf der Rechnung." data-en="All packages include AI query quota — no hidden consumption, no surprises on the bill.">Alle Pakete inklusive KI-Anfragen-Kontingent — kein versteckter Verbrauch, keine Überraschungen auf der Rechnung.</p>
       </div>
-      <div class="p-note" data-de="✓ 3-Wochen-Pilotphase in Ihrem Store" data-en="✓ 3-week pilot phase in your store">✓ 3-Wochen-Pilotphase in Ihrem Store</div>
+      <div class="p-note" data-de="✓ Demo in 30 Minuten — kostenlos" data-en="✓ Demo in 30 minutes — free">✓ Demo in 30 Minuten — kostenlos</div>
     </div>
     <div class="pgrid2">
       <div class="pc">
@@ -948,14 +947,7 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
         <div class="overage" data-de="Kein Mehrverbrauch — alles inklusive" data-en="No overage — everything included">Kein Mehrverbrauch — alles inklusive</div>
       </div>
     </div>
-    <!-- Pilot callout -->
-    <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--sf);border:1px solid var(--bdr);border-radius:var(--rl);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;box-shadow:var(--shad)">
-      <div>
-        <div style="font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;color:var(--t0);margin-bottom:.3rem" data-de="3-Wochen-Pilotphase in Ihrem Store" data-en="3-week pilot phase in your store">3-Wochen-Pilotphase in Ihrem Store</div>
-        <p style="font-size:14px;color:var(--t2);margin:0;line-height:1.5" data-de="Echte Kundendaten, echter Betrieb — kein Risiko, kein Vertrag. Wir zeigen Ihnen was RetailMind in Ihrem Store bewirkt." data-en="Real customer data, real operation — no risk, no contract. We show you what RetailMind achieves in your store.">Echte Kundendaten, echter Betrieb — kein Risiko, kein Vertrag. Wir zeigen Ihnen was RetailMind in Ihrem Store bewirkt.</p>
-      </div>
-      <a class="btn-a" onclick="gs('contact')" style="white-space:nowrap;flex-shrink:0" data-de="Pilotphase anfragen →" data-en="Request pilot phase →">Pilotphase anfragen →</a>
-    </div>
+
   </div>
 </section>
 
@@ -963,8 +955,8 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
 <section class="lead-sec" id="contact">
   <div class="l-inner">
     <div>
-      <h2 class="l-h2"><span data-de="Überzeugt?" data-en="Convinced?">Überzeugt?</span><br><em data-de="Sprechen wir miteinander." data-en="Let's talk.">Sprechen wir miteinander.</em></h2>
-      <p class="l-sub" data-de="Schildern Sie uns Ihre Situation — wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag. Unverbindlich, kostenlos." data-en="Tell us about your situation — we will get back to you within 24 hours with a concrete proposal. Non-binding, free of charge.">Schildern Sie uns Ihre Situation — wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag. Unverbindlich, kostenlos.</p>
+      <h2 class="l-h2"><span data-de="RetailMind" data-en="RetailMind">RetailMind</span><br><em data-de="live erleben." data-en="live — in 30 minutes.">live erleben.</em></h2>
+      <p class="l-sub" data-de="Buchen Sie eine 30-minütige Live-Demo — wir zeigen Ihnen RetailMind in Ihrem Szenario. Kein Vertrag, keine Kreditkarte." data-en="Book a 30-minute live demo — we show you RetailMind in your scenario. No contract, no credit card.">Buchen Sie eine 30-minütige Live-Demo — wir zeigen Ihnen RetailMind in Ihrem Szenario. Kein Vertrag, keine Kreditkarte.</p>
     </div>
     <div class="l-form">
       <input class="fi" type="text" placeholder="Ihr Name" data-de-ph="Ihr Name" data-en-ph="Your name">
@@ -974,13 +966,12 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
       <select class="fi" style="appearance:none">
         <option data-de="Ich interessiere mich für…" data-en="I am interested in…" disabled selected>Ich interessiere mich für…</option>
         <option data-de="Demo anfragen" data-en="Request demo">Demo anfragen</option>
-        <option data-de="3-Wochen-Pilotphase" data-en="3-week pilot phase">3-Wochen-Pilotphase</option>
         <option data-de="Pricing-Information" data-en="Pricing information">Pricing-Information</option>
         <option data-de="Store Designer" data-en="Store Designer">Store Designer</option>
         <option data-de="Flagship / Ketten" data-en="Flagship / Chains">Flagship / Ketten</option>
       </select>
-      <button class="f-sub" data-de="Kostenlos anfragen →" data-en="Request free →">Kostenlos anfragen →</button>
-      <div class="f-note" data-de="Keine Kreditkarte · Kein Vertrag · DSGVO-konform" data-en="No credit card · No contract · GDPR compliant">Keine Kreditkarte · Kein Vertrag · DSGVO-konform</div>
+      <button class="f-sub" data-de="Demo buchen →" data-en="Book demo →">Demo buchen →</button>
+      <div class="f-note" data-de="Kostenlos · Kein Vertrag · DSGVO-konform · 30 Min." data-en="Free · No contract · GDPR compliant · 30 min.">Kostenlos · Kein Vertrag · DSGVO-konform · 30 Min.</div>
     </div>
   </div>
 </section>
@@ -1011,8 +1002,8 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
   <div class="ft">
     <div>
       <div class="f-brand">
-        <svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#f0900a" fill-opacity=".12"/><path d="M9 22L18 9L27 22" stroke="#f0900a" stroke-width="2.2" stroke-linejoin="round"/><path d="M12.5 22h11" stroke="#f0900a" stroke-width="2.2"/><circle cx="18" cy="26" r="2.2" fill="#f0900a"/></svg>
-        <span class="f-brand-n">Retail<em>Mind</em></span>
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=180,fit=crop,q=95/ALpnEPbBrai9Xq68/logo_retailmind-mp8WpBQe2ru8PEol.png" alt="RetailMind" style="height:26px;width:auto;object-fit:contain">
+        
       </div>
       <p class="f-desc" data-de="Innovative KI-Lösungen für den stationären Handel. DSGVO-konform. Made in Germany." data-en="Innovative AI solutions for brick-and-mortar retail. GDPR compliant. Made in Germany.">Innovative KI-Lösungen für den stationären Handel. DSGVO-konform. Made in Germany.</p>
       <div class="f-con">
@@ -1177,7 +1168,7 @@ footer{background:var(--sf);border-top:1px solid var(--bdr);padding:4rem 2rem 2.
 <footer>
   <div class="ft">
     <div>
-      <div class="f-brand"><svg width="26" height="26" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#f0900a" fill-opacity=".12"/><path d="M9 22L18 9L27 22" stroke="#f0900a" stroke-width="2.2" stroke-linejoin="round"/><path d="M12.5 22h11" stroke="#f0900a" stroke-width="2.2"/><circle cx="18" cy="26" r="2.2" fill="#f0900a"/></svg><span class="f-brand-n">Retail<em>Mind</em></span></div>
+      <div class="f-brand"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=180,fit=crop,q=95/ALpnEPbBrai9Xq68/logo_retailmind-mp8WpBQe2ru8PEol.png" alt="RetailMind" style="height:26px;width:auto;object-fit:contain"></div>
       <p class="f-desc" data-de="Innovative KI-Lösungen für den stationären Handel. DSGVO-konform. Made in Germany." data-en="Innovative AI solutions for retail. GDPR compliant. Made in Germany.">Innovative KI-Lösungen für den stationären Handel. DSGVO-konform. Made in Germany.</p>
       <div class="f-con"><a href="mailto:info@r-mind.com">info@r-mind.com</a><a href="tel:+4921516476293">+49 2151 6476293</a></div>
     </div>
