@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://www.r-mind.com/sitemap.xml
+
+# Crawl delay (optional, be gentle)
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
